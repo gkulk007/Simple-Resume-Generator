@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body style="background-color:powderblue;">
+    <h1 class="display-2 text-center mb-3">Simple Resume Generator</h1>
+    <form class="container" action="" method="post">
+        {% csrf_token %}
+        {{form.media}}
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone No</label>
+            <input type="number" class="form-control" name="phone" id="phone">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Summary</label>
+            <textarea name="summary" class="form-control" id="summary" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Degree</label>
+            <input type="text" class="form-control" name="degree" id="degree">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">University</label>
+            <input type="text" class="form-control" name="university" id="university">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">School</label>
+            <input type="text" class="form-control" name="school" id="school">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Previous Work</label><br />
+            {{form.previous_work}}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Skills</label><br />
+            {{form.skills}}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Projects</label><br />
+            {{form.projects}}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <a href="/list" class="btn btn-danger text-center" style="
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
+">View All</a>
+
+</body>
+
+</html>
